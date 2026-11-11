@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; media-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>ReHand, Yuval Zetone</title>
+<meta name="description" content="ReHand turns hand therapy into play with motion tracking and projection.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400&display=swap">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="p-project">
+<div class="page">
+
+  <header class="bar">
+    <a href="../index.html">[Y]<sup>&reg;</sup></a>
+    <nav class="nav" aria-label="Main"><a href="../index.html">Work</a><a href="../about.html">About</a></nav>
+    <a href="../Yuval-Zetone-Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+  </header>
+
+  <section class="head">
+    <div class="meta"><span>[01]</span><span>ReHand</span><span>Physical computing</span></div>
+    <p>ReHand is an interactive rehabilitation experience that transforms hand therapy into play. Using motion tracking and projection, the same gestures required for recovery become the core mechanics of the game, making repetition feel natural, engaging, and rewarding.</p>
+  </section>
+
+  <main class="spreads">
+    <article class="spread">
+      <span class="n">01 / 04</span>
+      <video class="media" src="../images/rehand.mp4" poster="../images/rehand-poster.jpg" muted autoplay loop playsinline preload="metadata"></video>
+      <div class="words">
+        <p class="t">The problem</p>
+        <p>People living with conditions such as arthritis and Parkinson's often rely on repetitive hand exercises to maintain mobility and flexibility. Traditional routines can feel monotonous and offer little feedback or sense of progress, making it hard to stay motivated over time.</p>
+      </div>
+    </article>
+
+    <article class="spread">
+      <span class="n">02 / 04</span>
+      <video class="media" src="../images/rehand-game.mp4" poster="../images/rehand-game-poster.jpg" muted autoplay loop playsinline preload="metadata"></video>
+      <div class="words">
+        <p class="t">Movement first</p>
+        <p>The interaction was designed around rehabilitation movements first, with gameplay built around them. Gripping and pinching became the foundation of every interaction, so each action in the game supports the intended exercise.</p>
+        <p>A personal-best scoring system turns every repetition into a measurable achievement instead of just another exercise.</p>
+      </div>
+    </article>
+
+    <article class="spread">
+      <span class="n">03 / 04</span>
+      <img class="media flat" src="../images/rehand-diagram.jpg" alt="Diagram: camera, hand tracking with MediaPipe, hand gesture, game interaction, projection screen">
+      <div class="words">
+        <p class="t">How it works</p>
+        <p>A projector displays the game while a camera tracks hand movements in real time using MediaPipe. Each gesture is translated directly into gameplay, with nothing to hold or wear.</p>
+        <p>Projection was chosen so the experience works in open, public spaces, not only in a dedicated rehabilitation setup.</p>
+      </div>
+    </article>
+
+    <article class="spread">
+      <span class="n">04 / 04</span>
+      <video class="media" src="../images/rehand-selectmode.mp4" poster="../images/rehand-selectmode-poster.jpg" muted autoplay loop playsinline preload="metadata"></video>
+      <div class="words">
+        <p class="t">Outcome</p>
+        <p>Rather than a conventional rehabilitation tool, ReHand is an experience people genuinely enjoy using. It shows how interaction design can encourage repetition through intrinsic motivation, turning a routine obligation into something people want to come back to.</p>
+      </div>
+    </article>
+  </main>
+
+  <nav class="next" aria-label="More work">
+    <a href="../index.html">&larr; Back to work</a>
+    <a href="house-of-pilates.html"><span class="dim">Next</span>&ensp;[02] House of Pilates &rarr;</a>
+  </nav>
+
+  <footer class="foot">
+    <div><span id="date"></span><br>Yuval Zetone<sup>&reg;</sup></div>
+    <div id="clock"></div>
+    <div>New York<br><a href="https://www.instagram.com/yzetone_playground/" target="_blank" rel="noopener noreferrer">Instagram</a>&emsp;<a href="https://www.linkedin.com/in/yuval-zetone/" target="_blank" rel="noopener noreferrer">LinkedIn</a></div>
+  </footer>
+</div>
+<script src="../script.js" defer></script>
+</body>
+</html>

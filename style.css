@@ -1,0 +1,133 @@
+/* ==========================================================================
+   Yuval Zetone portfolio, shared styles
+   One font, one size, one set of colors for every page.
+   Sections: 1 Tokens  2 Base  3 Header  4 Footer  5 Home  6 About
+             7 Playground  8 Project pages  9 Small screens
+   ========================================================================== */
+
+/* 1 Tokens ---------------------------------------------------------------- */
+:root {
+  --paper: #ffffff;
+  --ink: #141414;
+  --grey: #9a9a96;
+  --font: "IBM Plex Sans", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --size: 14px;
+  --gutter: 28px;
+  --gap: clamp(20px, 2.4vw, 32px);
+  color-scheme: light;
+}
+
+/* 2 Base ------------------------------------------------------------------ */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: var(--size);
+  line-height: 1.65;
+  letter-spacing: .03em;
+  padding-inline: max(var(--gutter), env(safe-area-inset-left, 0px)) max(var(--gutter), env(safe-area-inset-right, 0px));
+}
+p { margin: 0; }
+a { color: inherit; text-decoration: none; }
+a:hover, a:focus-visible { text-decoration: underline; text-underline-offset: .25em; outline: none; }
+sup { font-size: .7em; vertical-align: .45em; line-height: 0; }
+img, video { display: block; max-width: 100%; }
+.dim { color: var(--grey); }
+
+.page { min-height: 100%; display: flex; flex-direction: column; }
+.page > .foot, .page > .tail { margin-top: auto; }
+
+/* 3 Header ---------------------------------------------------------------- */
+.bar { display: grid; grid-template-columns: 1fr auto 1fr; gap: 12px; padding-block: 22px; }
+.bar > :last-child { text-align: right; }
+.nav { display: flex; gap: 2.5ch; }
+.nav [aria-current="page"] { color: var(--grey); }
+
+/* 4 Footer ---------------------------------------------------------------- */
+.foot { display: grid; grid-template-columns: 1fr auto 1fr; gap: 12px; padding-block: 18px 22px; }
+.foot > :nth-child(2) { text-align: center; }
+.foot > :last-child { text-align: right; }
+.foot sup { font-size: .6em; vertical-align: .6em; }
+
+/* 5 Home ------------------------------------------------------------------ */
+.mid { flex: 1; align-content: center; display: grid; gap: clamp(56px, 9vw, 110px); padding-block: 48px 72px; }
+
+.work { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 12%; padding-inline: 14%; align-items: center; justify-items: center; }
+.work a { display: grid; position: relative; width: fit-content; max-width: 100%; }
+.work a:hover, .work a:focus-visible { text-decoration: none; }
+.work img { max-height: clamp(110px, 16vw, 190px); object-fit: contain; transition: transform .6s cubic-bezier(.2, .7, .2, 1), opacity .4s; }
+.work span { position: absolute; left: 0; top: 100%; margin-top: 10px; white-space: nowrap; color: transparent; transition: color .3s; }
+.work em { font-style: normal; color: var(--ink); }
+.work:hover img { opacity: .3; }
+.work a:hover img, .work a:focus-visible img { opacity: 1; transform: scale(1.06); }
+.work a:hover span, .work a:focus-visible span { color: var(--ink); }
+.tail { display: grid; gap: 4px; text-align: center; }
+.tail .foot { text-align: left; padding-top: 10px; }
+
+/* 6 About ----------------------------------------------------------------- */
+.about { flex: 1; display: grid; grid-template-columns: max-content minmax(0, 40ch); justify-content: center; align-content: center; align-items: start; gap: 0 var(--gap); padding-block: clamp(32px, 6vh, 72px) 72px; }
+.about figure { margin: 0; }
+.about img { height: clamp(280px, 50vh, 460px); width: auto; max-width: 40vw; object-fit: cover; }
+.about .text { display: grid; gap: 1.1em; margin-top: -4px; text-align: justify; hyphens: auto; }
+.about .contact { padding-top: 1.45em; text-align: left; }
+
+/* 7 Playground ------------------------------------------------------------ */
+.intro { padding-block: clamp(32px, 6vh, 72px) 0; max-width: 52ch; }
+.pieces { display: grid; gap: clamp(72px, 12vh, 140px); padding-block: clamp(40px, 7vh, 80px) 96px; align-content: start; }
+.piece { display: grid; grid-template-columns: max-content minmax(0, 52ch); gap: 10px var(--gap); justify-content: start; align-items: start; }
+.piece .media { height: min(calc(100vh - 260px), 560px); min-height: 300px; aspect-ratio: 16 / 9; max-width: 62vw; background: #eee; object-fit: cover; }
+.piece .words { display: grid; gap: 2px; align-self: end; margin-bottom: -4px; }
+
+/* Shared by Playground and project pages */
+.n { grid-column: 1 / -1; color: var(--grey); }
+
+/* 8 Project pages --------------------------------------------------------- */
+.head { display: grid; grid-template-columns: max-content minmax(0, 52ch); gap: 0 var(--gap); padding-block: clamp(32px, 6vh, 72px) 0; }
+.head .meta { display: grid; align-content: start; }
+.spreads { display: grid; gap: clamp(40px, 6vh, 72px); padding-block: clamp(28px, 4vh, 48px) 48px; align-content: start; }
+.spread { display: grid; grid-template-columns: max-content minmax(0, 44ch); gap: 10px var(--gap); justify-content: start; }
+.spread .media { width: min(58vw, 880px); height: auto; background: #f2f2f0; }
+.spread .media.flat { background: var(--paper); }
+.spread .words { display: grid; gap: 1.1em; align-self: start; margin-top: -4px; }
+.spread .t { margin-bottom: -1.1em; padding-bottom: 2px; }
+.spread .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: start; background: none; }
+.spread .pair img { width: 100%; height: auto; }
+.spread .pair.square img { aspect-ratio: 1; object-fit: cover; }
+.closing { padding-block: 0 72px; grid-template-columns: min(58vw, 880px) minmax(0, 44ch); justify-content: start; }
+.closing > * { grid-column: 2; }
+.next { display: flex; justify-content: space-between; gap: 16px; padding-bottom: 40px; }
+
+/* 9 Small screens --------------------------------------------------------- */
+@media (max-width: 860px) {
+  .about, .piece, .head, .spread { grid-template-columns: minmax(0, 1fr); }
+  .about { gap: 28px 0; padding-block: 24px 64px; }
+  .about figure { justify-self: center; }
+  .about img { height: auto; min-height: 0; width: min(64vw, 300px); max-height: 46vh; max-width: 100%; object-fit: cover; margin-inline: auto; }
+  .about .text { max-width: 62ch; text-align: left; }
+  .piece .media { height: auto; min-height: 0; width: 100%; max-width: none; }
+  .head { gap: 14px; }
+  .closing > * { grid-column: auto; }
+  .spread .media { width: 100%; }
+  .piece .words, .spread .words { max-width: 62ch; margin: 0; }
+}
+@media (max-width: 860px) {
+  /* Phones and portrait tablets: stack the work so it fills the screen instead of floating in white space */
+  .mid { padding-block: clamp(40px, 6vh, 64px) 56px; }
+  .work { grid-template-columns: minmax(0, 1fr); gap: clamp(40px, 6vh, 56px) 0; padding-inline: 0; }
+  .work img { max-height: clamp(110px, 20vw, 170px); }
+  .work span { color: var(--ink); }
+}
+@media (max-width: 600px) {
+  :root { --gutter: 16px; }
+  .work img { max-height: clamp(96px, 27vw, 120px); }
+}
+@media (max-width: 520px) {
+  .foot { grid-template-columns: 1fr 1fr; }
+  .foot > :nth-child(2) { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .work img, .work span { transition: none; }
+}

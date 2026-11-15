@@ -1,4 +1,3 @@
-// Yuval Zetone portfolio, shared script.
 // 1. Shows today's date and the time in New York in the footer.
 // 2. Keeps links to projects without a page yet from jumping to the top.
 // 3. Stops looping videos for visitors who ask for less motion.
